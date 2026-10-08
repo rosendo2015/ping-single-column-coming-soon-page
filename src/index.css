@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Libre Franklin", sans-serif;
+  --color-ping-blue: hsl(223 87% 63%);
+  --color-ping-blue-hover: hsl(223 87% 69%);
+  --color-ping-blue-200: hsl(223 100% 88%);
+  --color-ping-red: hsl(354 100% 66%);
+  --color-ping-gray: hsl(0 0% 59%);
+  --color-ping-ink: hsl(209 33% 12%);
+}
+
+:root {
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: var(--color-ping-ink);
+  background: #fff;
+  font-weight: 300;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
