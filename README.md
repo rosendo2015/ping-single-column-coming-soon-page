@@ -62,9 +62,15 @@ O Vite mostrará no terminal a URL local, normalmente `http://localhost:5173/`.
 
 - Exibe a marca Ping, o título, o formulário e a ilustração do dashboard.
 - Em telas menores que 601 px, o campo e o botão ficam empilhados; em telas maiores, ficam lado a lado.
-- O campo usa a validade HTML do navegador (`type="email"` e `required`) e mostra uma mensagem customizada com borda vermelha para emails ausentes ou inválidos.
-- Ao enviar um email válido, a página mostra uma confirmação acessível com `role="status"`.
+- O campo valida emails com as regras HTML de `type="email"` e `required`; a validação é apresentada pelo próprio formulário, em vez do aviso nativo do navegador.
 - Os links sociais estão no rodapé.
+
+### Estados de validação do formulário
+
+1. **Inicial:** campo com borda azul-clara e sem mensagem de erro.
+2. **Email ausente ou inválido:** ao selecionar **Notify Me**, o campo recebe borda vermelha, foco e a mensagem _“Please provide a valid email address”_ abaixo dele. O erro também é associado ao campo por `aria-invalid` e `aria-describedby`.
+3. **Correção:** quando o valor passa a ser um email válido, a mensagem e a borda de erro são removidas.
+4. **Envio válido:** a página exibe _“Thanks! We will notify you when we launch.”_ como mensagem de status acessível (`role="status"`).
 
 **Limite atual:** o formulário é apenas demonstrativo. O envio não chama uma API, não cadastra emails e não persiste dados. Os links sociais também devem ser atualizados para os perfis oficiais antes da publicação.
 
